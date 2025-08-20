@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("stucco.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+    background: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+.nav-left {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-right a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    background: grey;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.divproduct {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.divproduct figure {
+    margin: 0;
+}
+
+.divinfo {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}   
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d9534f;
+    margin-top: 10px;
+}
+
+.divbuttons {
+    margin-top: 10px;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.divbuttons button {
+  width: 150px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+table {
+    width: 100%;
+    height: 10%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: none;
+    padding: 8px;
+    text-align: left;
+}
+
+
+.divsimilar {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    margin-left: 100px;
+}
+
+.divbox {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.divbox a{
+    text-decoration: none;
+}
+    
+
+.product-button a {
+    margin-right: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.product-options a{
+    border-style: solid;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: black;
+    margin-top: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    color: aliceblue;
+}

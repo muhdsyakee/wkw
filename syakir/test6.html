@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="quee/jquery-3.7.1.min.js"></script>
+    <title>Query 3</title>
+</head>
+<style>
+    body {
+        font-family: Georgia, 'Times New Roman', Times, serif
+    }
+
+    .header {
+        text-align: center;
+        padding: 10px;
+        background: aqua;
+        color: gray;
+    }
+
+    button {
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #gbr {
+        position: relative;
+    }
+</style>
+
+<body>
+
+    <div class="header">
+        <h1>MUHAMMAD SYAKIR BIN ZAINAL AZHAR</h1>
+    </div>
+
+
+    <div class="container">
+        <button id="animasi1">Animasi</button>
+
+        <button id="animasi2">Animasi 2</button><br>
+        <img id="gbr" src="Roti_John.jpg" width="200px">
+
+        <br><br>
+
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#animasi1').click(function () {
+                $('#gbr').animate({
+                    top: 200,
+                })
+
+                $('#gbr').animate({
+                    left: 300,
+                })
+
+                $('#gbr').animate({
+                    top: 0,
+                })
+
+                $('#gbr').animate({
+                    left: 0,
+                })
+
+
+            })
+
+            $('#animasi2').click(function () {
+                $('#gbr').animate({
+                    top: 200,
+                })
+
+                $('#gbr').animate({
+                    left: 300,
+                })
+
+                $('#gbr').animate({
+                    top: 0,
+                })
+
+                $('#gbr').animate({
+                    left: 0,
+                })
+
+                $('#gbr').animate({
+                    width: 400,
+                    opacity: 0,
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

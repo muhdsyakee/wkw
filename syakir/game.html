@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors - Leaderboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .choices {
+      margin: 20px;
+    }
+    .choices button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    #result, #score, #chances {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    #leaderboard {
+      margin-top: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    ol {
+      text-align: left;
+      padding-left: 20px;
+    }
+    #reset, #resetLeaderboard, #newPlayer {
+      margin-top: 20px;
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #ff6961;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #start {
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✊ Rock ✋ Paper ✌️ Scissors</h1>
+
+  <div id="start">
+    <input type="text" id="playerName" placeholder="Enter your name">
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <div class="choices" style="display:none;" id="gameChoices">
+    <button onclick="play('rock')">🪨 Rock</button>
+    <button onclick="play('paper')">📄 Paper</button>
+    <button onclick="play('scissors')">✂️ Scissors</button>
+  </div>
+
+  <div id="chances"></div>
+  <div id="result"></div>
+  <div id="score"></div>
+
+  <button id="reset" style="display:none;" onclick="resetGame()">Play Again</button>
+  <button id="newPlayer" style="display:none;" onclick="newPlayer()">New Player</button>
+
+  <div id="leaderboard" style="display:none;">
+    <h2>🏆 Leaderboard</h2>
+    <ol id="leaderboardList"></ol>
+    <button id="resetLeaderboard" onclick="resetLeaderboard()">Reset Leaderboard</button>
+  </div>
+
+  <audio id="endSound" src="Funny meme hello (sound effect)-yt.savetube.me.mp3"></audio>
+
+  <script>
+    let playerName = "";
+    let playerScore = 0;
+    let computerScore = 0;
+    let chancesLeft = 3;
+
+    function startGame() {
+      playerName = document.getElementById("playerName").value.trim();
+      if (!playerName) {
+        alert("Please enter your name!");
+        return;
+      }
+      document.getElementById("start").style.display = "none";
+      document.getElementById("gameChoices").style.display = "block";
+      document.getElementById("chances").textContent = `Chances left: ${chancesLeft}`;
+    }
+
+    function play(playerChoice) {
+      if (chancesLeft <= 0) {
+        alert("No more chances! Click Play Again.");
+        return;
+      }
+
+      const choices = ["rock", "paper", "scissors"];
+      const computerChoice = choices[Math.floor(Math.random() * 3)];
+      let result = "";
+
+      if (playerChoice === computerChoice) {
+        result = "It's a Draw!";
+      } else if (
+        (playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "paper" && computerChoice === "rock") ||
+        (playerChoice === "scissors" && computerChoice === "paper")
+      ) {
+        result = "You Win! 🎉";
+        playerScore++;
+      } else {
+        result = "Computer Wins! 😔";
+        computerScore++;
+      }
+
+      chancesLeft--;
+      document.getElementById("result").innerHTML = `
+        You chose <b>${playerChoice}</b> <br>
+        Computer chose <b>${computerChoice}</b> <br><br>
+        <strong>${result}</strong>
+      `;
+
+      document.getElementById("score").innerHTML = `
+        Your Score: ${playerScore} | Computer Score: ${computerScore}
+      `;
+
+      document.getElementById("chances").textContent = `Chances left: ${chancesLeft}`;
+
+      if (chancesLeft === 0) {
+        endRound();
+      }
+    }
+
+    function endRound() {
+      alert(`Round Over! ${playerName}, your score is ${playerScore}`);
+      saveScore(playerName, playerScore);
+      showLeaderboard();
+      document.getElementById("gameChoices").style.display = "none";
+      document.getElementById("reset").style.display = "inline-block";
+      document.getElementById("newPlayer").style.display = "inline-block";
+
+      setTimeout(() => {
+        playEndSound();
+      }, 500);
+    }
+
+    function saveScore(name, score) {
+      let leaderboard = JSON.parse(localStorage.getItem("rpsLeaderboard")) || [];
+      leaderboard.push({ name: name, score: score });
+      leaderboard.sort((a, b) => b.score - a.score);
+      leaderboard = leaderboard.slice(0, 5); // Top 5 sahaja
+      localStorage.setItem("rpsLeaderboard", JSON.stringify(leaderboard));
+    }
+
+    function showLeaderboard() {
+      document.getElementById("leaderboard").style.display = "block";
+      let leaderboard = JSON.parse(localStorage.getItem("rpsLeaderboard")) || [];
+      let list = document.getElementById("leaderboardList");
+      list.innerHTML = "";
+      leaderboard.forEach(entry => {
+        let item = document.createElement("li");
+        item.textContent = `${entry.name}: ${entry.score}`;
+        list.appendChild(item);
+      });
+    }
+
+    function resetGame() {
+      playerScore = 0;
+      computerScore = 0;
+      chancesLeft = 3;
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("score").innerHTML = "";
+      document.getElementById("chances").innerHTML = `Chances left: ${chancesLeft}`;
+      document.getElementById("gameChoices").style.display = "block";
+      document.getElementById("reset").style.display = "none";
+      document.getElementById("newPlayer").style.display = "none";
+    }
+
+    function newPlayer() {
+      playerScore = 0;
+      computerScore = 0;
+      chancesLeft = 3;
+
+      document.getElementById("playerName").value = "";
+      document.getElementById("start").style.display = "block";
+      document.getElementById("gameChoices").style.display = "none";
+      document.getElementById("reset").style.display = "none";
+      document.getElementById("newPlayer").style.display = "none";
+
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("score").innerHTML = "";
+      document.getElementById("chances").innerHTML = "";
+    }
+
+    function resetLeaderboard() {
+      if (confirm("Are you sure you want to reset the leaderboard?")) {
+        localStorage.removeItem("rpsLeaderboard");
+        showLeaderboard();
+      }
+    }
+
+    function playEndSound() {
+      const sound = document.getElementById("endSound");
+      sound.play();
+    }
+  </script>
+
+</body>
+</html>

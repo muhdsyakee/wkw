@@ -1,0 +1,101 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 30px;
+    padding: 20px;
+    background-image: url("ww.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+}
+
+h2{
+    text-align: center;
+}
+
+h4{
+    margin: 1px;
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 14px;
+    background: gray;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+    color: aliceblue;
+}
+
+.divmain {
+    width: 600px;
+    padding: 30px;
+    border: 2px solid ;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 200px; 
+}
+
+.divtype, .divtenek {
+    width: 200px;
+    padding: 10px;
+    border: 2px solid black;
+    margin-right: 30px; 
+}
+
+.divbesides {
+    display: flex;
+    flex-direction: column;
+    margin-top: -5px;
+}
+
+.formbase {
+    display: flex;
+    gap: 10px;
+}
+
+.head{
+    background-color: grey;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    width:auto;
+}
+
+select {
+    width: 80px;
+    padding: 0;
+    font-size: 14px;
+}
+
+button {
+    background-color: black;
+    color: azure;
+    border: none;
+    padding: 10px 6px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+button:hover {
+    background-color:teal;
+}
+
+.baten{
+    display: flex;
+    gap: 5px;
+    width: 565px;
+    border: 1px solid black;
+    padding: 14px;
+    background-color: gray;    
+    justify-content: center;
+}
+
+.error {
+    border: 2px solid red; /* Red border to highlight error */
+    background-color: #ffcccc; /* Light red background */
+}
