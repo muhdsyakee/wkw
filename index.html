@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body{
+            background-image: url(bg1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        section{
+            flex: 1;
+               }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background:whitesmoke;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .logo{
+            width: 130px;
+            height: 150px;
+            margin: 0 10px;
+        }
+        .tittle{
+            flex-grow: 1;
+            text-align: center;
+            font-size: 100px;
+            font-weight: bold;
+        }
+
+        .shadow-dance-text {
+        font-size: 4rem;
+        color: black;
+        text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+        animation: shadow-dance 2s infinite;
+        }
+
+            @keyframes shadow-dance {
+        0%, 100% {
+            text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+        }
+        50% {
+            text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+        }
+    }
+
+
+        div.img{
+            width: 130px;
+            height: 170px;
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+            text-align: center;
+            float: left;
+            margin-top: 50px;
+            border-radius: 20px;
+            box-shadow: 5px 10px gray;
+            margin-left: 200px;
+        }
+
+        div.img img{
+            margin: 5px;
+        }
+
+        div.img:hover{
+            background-color: ivory;
+        }
+
+        div.desc{
+            text-align: center;
+            width: 120px;
+            margin: 5px;
+        }
+
+        h3{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>MUHAMMAD SYAKIR BIN ZAINAL AZHAR</h3>
+<header>
+    <a href="https://www.mara.gov.my/en/index/"><img src="mara.png" alt="mara" class="logo"></a>    
+    <div class="shadow-dance-container">
+        <h1 class="shadow-dance-text">MOBILE APPS DEVELOPMENT</h1>
+    </div>
+    <a href="https://www.tvetmara.edu.my/index.php/ikm-lumut"><img src="ikm.png" alt="ikm" class="logo" ></a>
+</header>
+   
+<section>
+    <div class="img"> 
+        <a target="_blank" href="html_page.html">
+            <img src="h.png" alt="html" width="100" height="90"></a>
+            <div class="desc">HTML</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="css_page.html">
+            <img src="c.png" alt="css" width="110" height="100"></a>
+            <div class="desc">CSS</div>
+    </div>
+    <div class="img">
+        <a target="_blank" href="js_page.html">
+            <img src="jss.png"css" width="110" height="90"></a>
+            <div class="desc">Java Script</div>
+    </div>
+
+    <div class="img">
+        <a target="_blank" href="jquery_page.html">
+            <img src="images.png"css" width="110" height="90"></a>
+            <div class="desc">JQuery</div>
+    </div>
+	
+	<div class="img">
+        <a target="_blank" href="ls.html">
+            <img src="ls.png"css" width="110" height="90"></a>
+            <div class="desc">Local Storage</div>
+    </div>
+
+</section>
+</body>
+</html>

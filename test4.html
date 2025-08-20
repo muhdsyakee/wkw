@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="quee/jquery-3.7.1.min.js"></script>
+    <title>Query 3</title>
+</head>
+<style>
+    body {
+        font-family: Georgia, 'Times New Roman', Times, serif
+        
+    }
+
+    .header {
+        text-align: center;
+        padding: 10px;
+        background: aqua;
+        color: gray;
+    }
+
+    button{
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+</style>
+
+<body>
+
+    <div class="header">
+        <h1>MUHAMMAD SYAKIR BIN ZAINAL AZHAR</h1>
+    </div>
+
+
+    <div class="container">
+        <button id="hilang">Hilang</button>
+        <button id="ada">Ada</button>
+        <button id="toggle">Toggle</button>
+
+        <button id="shilang">Slide Hilang</button>
+        <button id="sada">Slide Ada</button>
+        <button id="stoggle"> Slide Toggle</button>
+
+        <p id="para1">
+            Ramadan merupakan bulan kesembilan dalam kalendar Islam dan dianggap sebagai bulan yang penuh keberkatan.
+            Dalam bulan ini, umat Islam diwajibkan berpuasa dari terbit fajar hingga terbenam matahari. Puasa Ramadan
+            bukan sekadar menahan lapar dan dahaga tetapi juga menahan diri daripada perbuatan yang membatalkan pahala
+            ibadah.
+
+            Selain itu, Ramadan adalah bulan yang istimewa kerana padanya diturunkan al-Quran sebagai panduan hidup bagi
+            umat Islam. Malam Lailatul Qadar yang lebih baik daripada seribu bulan juga berlaku dalam salah satu malam
+            ganjil di sepuluh malam terakhir Ramadan.
+
+            Sepanjang bulan ini, umat Islam digalakkan meningkatkan ibadah seperti solat tarawih, membaca al-Quran, dan
+            bersedekah. Suasana Ramadan juga dihidupkan dengan berbuka puasa bersama keluarga serta solat berjemaah di
+            masjid.
+
+            Di samping itu, Ramadan mendidik umat Islam untuk bersikap sabar, bersyukur, dan lebih prihatin terhadap
+            golongan yang kurang bernasib baik. Amalan bersedekah dan memberi makanan kepada mereka yang berpuasa sangat
+            dianjurkan dalam bulan ini.
+
+            Menjelang akhir Ramadan, umat Islam diwajibkan membayar zakat fitrah sebagai penyucian diri dan membantu
+            mereka yang memerlukan. Hari terakhir Ramadan disambut dengan penuh kegembiraan sebelum tiba hari
+            kemenangan, iaitu Hari Raya Aidilfitri.
+
+            Kesimpulannya, Ramadan bukan sekadar menahan lapar dan dahaga tetapi juga mendidik rohani serta membentuk
+            akhlak yang lebih baik. Ia merupakan masa untuk mendekatkan diri kepada Allah dan memperbanyakkan amalan
+            kebaikan.Pada bulan ini, pintu syurga dibuka seluas-luasnya dan pintu neraka ditutup, sementara syaitan
+            dirantai. Malam yang paling dinantikan dalam Ramadan adalah Lailatul Qadar, yang lebih baik daripada seribu
+            bulan. Pada malam ini, Allah menurunkan rahmat dan keampunan kepada hamba-Nya yang beribadah dengan penuh
+            keikhlasan.
+            
+        </p>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#hilang').click(function(){
+                $('#para1').fadeOut(2000, function(){                
+                $('#hilang').text('Hilang Dah');
+            });
+            })
+
+            $('#ada').click(function(){
+                $('#para1').fadeIn('slow')
+            })
+
+            $('#toggle').click(function(){
+                $('#para1').fadeToggle('slow')
+            })
+
+            $('#shilang').click(function(){
+                $('#para1').slideUp('slow')
+            })
+
+            $('#sada').click(function(){
+                $('#para1').slideDown('slow')
+            })
+
+            $('#stoggle').click(function(){
+                $('#para1').slideToggle('slow')
+            })
+        })
+    </script>
+</body>
+
+</html>

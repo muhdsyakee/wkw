@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/17573ddeb5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Add to cart</title>
+</head>
+<body>
+    <h1>This is my bazar Ramadan</h1>
+    <br>
+    <div class="utama">
+        <div class="pertama">
+            <table>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td><img src="jubag.jpeg" alt="jubag"></td>
+                <td>Jubah</td>
+                <td>RM35.00</td>
+                <td><button class="beli" onclick="addData({nama: 'Jubah', price: 35})"><i class="fa-duotone fa-solid fa-cart-plus"></i>Beli</button></td>
+            </tr>
+            <tr>
+                <td><img src="kopiah.jpeg" alt="kopiah"></td>
+                <td>Kopiah</td>
+                <td>RM25.00</td>
+                <td><button class="beli" onclick="addData({nama: 'Kopiah', price: 25})"><i class="fa-duotone fa-solid fa-cart-plus"></i>Beli</button></td>
+            </tr>
+        </table>
+        </div>
+
+        <div class="kedua">
+        <div class="list-kedua kedua-padding"" id="cart">
+            <div>Jubah (1X)</div>
+            <div><button class="buang"><i class="fa-solid fa-trash"></i> Buang</button></div>
+        </div>
+        <div class="total">
+            <p>Total</p>
+            <div id="total">
+                <p class="bold">RM15.00</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="tp1.js"></script>
+</body>
+</html>

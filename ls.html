@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY JS</title>
+
+    <style>
+          body{
+            background-image: url(bg1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background:whitesmoke;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .logo{
+            width: 130px;
+            height: 150px;
+            margin: 0 10px;
+        }
+        .tittle{
+            flex-grow: 1;
+            text-align: center;
+            font-size: 100px;
+            font-weight: bold;
+        }
+
+        .shadow-dance-text {
+        font-size: 4rem;
+        color: black;
+        text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+        animation: shadow-dance 2s infinite;
+        }
+
+            @keyframes shadow-dance {
+        0%, 100% {
+            text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+        }
+        50% {
+            text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+        }
+    }
+
+    table, td, tr{
+        width: 1400px;
+        height: 50px;
+        margin: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-top: 50px;
+        text-align: center;
+        
+    }
+
+    
+
+    </style>
+</head>
+<body>
+
+    <button onclick="document.location='index.html'">Home</button>
+
+    <header>
+        <a href="https://www.mara.gov.my/en/index/"><img src="mara.png" alt="mara" class="logo"></a>    
+    <div class="shadow-dance-container">
+        <h1 class="shadow-dance-text">LOCAL STORAGE JOB SHEET</h1>
+    </div>
+    <a href="https://www.tvetmara.edu.my/index.php/ikm-lumut"><img src="ikm.png" alt="ikm" class="logo" ></a>
+    </header>
+
+    <table>
+        <tr>
+            <td><a href="game.html">GAME</a></td>
+          </tr>
+    </table>
+
+</body>
+</html>
